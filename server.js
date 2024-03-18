@@ -2,7 +2,7 @@ let express = require("express")
 let app = express()
 let mongoose = require("mongoose")
 let bodyparser = require("body-parser")
-const bcrypt = require("bcrypt");
+
 const passport = require("passport");
 const expressSession = require("express-session");
 
@@ -42,15 +42,16 @@ res.send("Hello world")
 })
 
 app.get("/login", (req,res)=>{
-    res.render("login.ejs")
+    res.render("l.ejs")
+  
 })
 
-app.post("/login", passport.authenticate("local", {failureRedirect:"/register", successRedirect:"/movies"}), (req,res)=>{
+app.post("/login", passport.authenticate("local", {failureRedirect:"/register", successRedirect:"/"}), (req,res)=>{
 
 })
 
 app.get("/register", (req,res)=>{
-    res.render("register.ejs");
+    res.render("r.ejs");
 })
 app.post("/register", async (req, res) => {
     
@@ -66,5 +67,14 @@ app.post("/register", async (req, res) => {
     
     
 });
+
+
+//! Dashboard
+app.get("/dashboard", (req,res)=>{
+    res.render("dashboard.ejs")
+})
+
+//! Order
+
 
 app.listen(3000)

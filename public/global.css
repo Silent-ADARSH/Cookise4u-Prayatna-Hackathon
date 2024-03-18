@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  :root {
+    /* fonts */
+    --font-product-sans: "Product Sans";
+  
+    /* font sizes */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-lg: 18px;
+    --font-size-2xs: 11px;
+    --font-size-3xl-4: 22.4px;
+    --font-size-smi-2: 12.2px;
+    --font-size-2xs-4: 10.4px;
+    --font-size-2xs-9: 10.9px;
+    --font-size-base: 16px;
+    --font-size-9xl-2: 28.2px;
+  
+    /* Colors */
+    --color-white: #fff;
+    --color-whitesmoke-100: #f8f8f8;
+    --color-whitesmoke-200: #f7f7f7;
+    --color-whitesmoke-300: #efeeeb;
+    --color-black: #000;
+    --color-springgreen: #03fb75;
+    --color-red: #ff0000;
+    --color-dimgray: #606060;
+    --color-gray: #0c0c0d;
+    --color-mediumaquamarine: #16c098;
+    --color-silver-100: #bcbcbc;
+    --color-gainsboro: #e0e0e0;
+    --color-mediumblue-100: #001ec0;
+  
+    /* Gaps */
+    --gap-mini: 15px;
+    --gap-xl: 20px;
+    --gap-base: 16px;
+    --gap-8xs: 5px;
+    --gap-7xs-5: 5.5px;
+    --gap-6xs-5: 6.5px;
+    --gap-38xl: 57px;
+    --gap-4xs: 9px;
+    --gap-sm: 14px;
+    --gap-lgi: 19px;
+    --gap-3xs: 10px;
+    --gap-5xl-4: 24.4px;
+    --gap-base-5: 15.5px;
+    --gap-6xs-2: 6.2px;
+    --gap-2xl: 21px;
+    --gap-mini-8: 14.8px;
+    --gap-5xs: 8px;
+  
+    /* Paddings */
+    --padding-6xl: 25px;
+    --padding-lg: 18px;
+    --padding-xl: 20px;
+    --padding-5xs: 8px;
+    --padding-4xs: 9px;
+    --padding-12xs: 1px;
+    --padding-6xs: 7px;
+    --padding-8xs: 5px;
+    --padding-30xl: 49px;
+    --padding-xs: 12px;
+    --padding-10xs: 3px;
+    --padding-smi: 13px;
+    --padding-3xs: 10px;
+    --padding-9xs: 4px;
+    --padding-mini-3: 14.3px;
+    --padding-10xs-5: 2.5px;
+    --padding-base: 16px;
+    --padding-11xs: 2px;
+    --padding-5xl: 24px;
+    --padding-4xs-1: 8.1px;
+    --padding-3xs-5: 9.5px;
+    --padding-10xs-6: 2.6px;
+    --padding-10xs-7: 2.7px;
+    --padding-mid: 17px;
+    --padding-7xs-9: 5.9px;
+  
+    /* Border radiuses */
+    --br-xl-4: 20.4px;
+    --br-5xs: 8px;
+    --br-xs: 12px;
+    --br-21xl: 40px;
+    --br-5xl: 24px;
+  
+    /* Effects */
+    --shadow: 0px 20px 60px rgba(0, 0, 0, 0.05);
+  }
+  

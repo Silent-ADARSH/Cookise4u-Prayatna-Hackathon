@@ -1,18 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--This meta is used for Responsiveness-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="scss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    <form action="/login" method="post">
-        <label for="username">Enter your Username </label>
-        <input type="text" name="username"><br><br>
-     
-        <label for="password">Enter your password</label>
-        <input type="text" name="password"><br><br>
-        <button>Log in</button>
-    </form>
+
+<div class="container">
+    <div class="screen">
+        <div class="screen__content">
+            <form class="login" action="/login" method="post"  onsubmit="return validateForm()">
+                <div class="login__field">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" class="login__input" name="username" id="username" placeholder="User name / Email">
+                    <span class="error-message" id="username-error"></span>
+                </div>
+                <div class="login__field">
+                    <i class="login__icon fas fa-lock"></i>
+                    <input type="password" class="login__input" name="password id="password" placeholder="Password">
+                    <span class="error-message" id="password-error"></span>
+                    <div class="password-requirements" style="font-size:x-small;">
+                        <h4>Password Requirements:</h4>
+                        <ul>
+                            <li>At least 8 characters long</li>
+                            <li>At least one lowercase letter</li>
+                            <li>At least one uppercase letter</li>
+                            <li>At least one digit</li>
+                        </ul>
+                    </div> 
+                </div>
+                <button type="submit" class="button login__submit">
+                    <span class="button__text">Log In Now</span>
+                    <i class="button__icon fas fa-chevron-right"></i>
+                </button>               
+            </form>
+            <div class="social-login">
+                <h3>log in via</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-login__icon fab fa-instagram"></a>
+                    <a href="#" class="social-login__icon fab fa-facebook"></a>
+                    <a href="#" class="social-login__icon fab fa-twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="screen__background">
+            <span class="screen__background__shape screen__background__shape4"></span>
+            <span class="screen__background__shape screen__background__shape3"></span>        
+            <span class="screen__background__shape screen__background__shape2"></span>
+            <span class="screen__background__shape screen__background__shape1"></span>
+        </div>      
+    </div>
+</div>
+
+<script>
+    function validateForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var isValid = true;
+
+        // Check username
+        if (username.trim() === "") {
+            document.getElementById("username-error").innerText = "Username is required";
+            isValid = false;
+        } else {
+            document.getElementById("username-error").innerText = "";
+        }
+        if (username.trim().match(/[^\w@]/)) {
+            document.getElementById("username-error").innerText = "\nSpecial character other than '@' isn't allowed";
+            isValid = false;
+        } else {
+            document.getElementById("username-error").innerText = "";
+        }        
+        if (password.trim() === "") {
+            document.getElementById("password-error").innerText = "Password is required";
+            isValid = false;
+        } else if (password.length < 8) {
+            document.getElementById("password-error").innerText = "Password must be at least 8 characters long";
+            isValid = false;
+        } else if (!password.match(/[a-z]/)) {
+            document.getElementById("password-error").innerText = "Password must contain at least one lowercase letter";
+            isValid = false;
+        } else if (!password.match(/[A-Z]/)) {
+            document.getElementById("password-error").innerText = "Password must contain at least one uppercase letter";
+            isValid = false;
+        } else if (!password.match(/\d/)) {
+            document.getElementById("password-error").innerText = "Password must contain at least one digit";
+            isValid = false;
+        } else {
+            document.getElementById("password-error").innerText = "";
+        }
+    
+        return isValid;
+
+        return isValid;
+    }
+</script>
 </body>
 </html>
