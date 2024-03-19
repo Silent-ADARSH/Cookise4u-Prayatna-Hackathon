@@ -75,6 +75,9 @@ app.get("/dashboard", (req,res)=>{
 })
 
 //! Order
+app.get("/products", (req,res)=>{
+    res.render("pages/product.ejs")
+})
 
 
 app.listen(3000)
