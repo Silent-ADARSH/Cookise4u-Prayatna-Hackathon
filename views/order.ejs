@@ -1,20 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="order.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="order.css">
 </head>
 <body>
-    <form action="/order" method="post">
-        <label for="name">Enter Name</label>
-        <input type="text" name="name" id=""><br><br>
+  <header>
+    <div class="container">
+      <h1 class="dashboard-title">Dashboard</h1>
+      <p class="date">1 June 2023</p>
+      <img src="placeholder.jpg" alt="Dashboard Logo" class="logo">
+    </div>
+  </header>
 
-        <label for="price">Enter Price</label>
-        <input type="text" name="price"><br>
+  <section class="main-content">
+    <div class="left-panel">
+      <div class="analytics">
+        <a href="/dashboard">
+          <p>Dashboard</p>
+        </a>
+      </div>
 
-        <button>Submit</button>
-    </form>
+      <a href="">
+        <div class="analytics">
+          <p>AI Driven Analytics</p>
+        </div>
+      </a>
+
+      <a href="/order">
+        <div class="analytics">
+          <p>Orders</p>
+        </div>
+      </a>
+
+      <a href="/product">
+        <div class="analytics">
+          <p>Products</p>
+        </div>
+      </a>
+      
+      <div class="analytics">
+        <p>Profile</p>
+      </div>
+    </div>
+    
+    <div class="right-panel">
+      <h1>Order</h1>
+      <table>
+        <tr>
+          <td>s.no</td>
+          <td>Order id</td>
+          <td>Product Name</td>
+          <td>Address</td>
+          <td>Date</td>
+          <td>Price</td>
+          <td>Status</td>
+        </tr>
+        
+        <% data.forEach((order, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= order.Order_id %></td>
+            <td><%= order.Product_name %></td>
+            <td><%= order.Address %></td>
+            <td><%= order.Date %></td>
+            <td><%= order.Price %></td>
+            <td><%= order.Status %></td>
+          </tr>
+        <% }); %>
+        
+      </table>
+    </div>
+  </section>
+  <script src="dash.js"></script>
 </body>
 </html>

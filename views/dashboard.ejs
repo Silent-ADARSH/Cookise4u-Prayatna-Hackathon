@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="dashboard.css">
+  <!-- ! Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
@@ -20,26 +22,99 @@
      <div class="analytics">
       <p>Dashboard</p>
      </div>
+     <a href="">
      <div class="analytics">
       <p>AI Driven Analytics</p>
-     </div>
+     </div></a>
+
+     <a href="/order">
      <div class="analytics">
       <p>Orders</p>
-     </div>
+     </div></a>
    
+     <a href="/products">
       <div class="analytics">
           <p>Products</p>
-      </div>
+      </div></a>
       
+      <a href="/profile">
      <div class="analytics">
       <p>Profile</p>
-     </div>
+     </div></a>
      
     </div>
     <div class="right-panel">
-    
+      <div class="bar-chart">
+ 
+        <canvas id="myChart" width="auto" height="100"></canvas>
+        
+
     </div>
   </section>
   <script src="dash.js"></script>
+  <script>
+    // Sample data
+    let ordersData = {
+        "orders": [
+            {
+                "order_id": "1001",
+                "customer_name": "John Doe",
+                "order_date": "2024-03-13",
+                "total_amount": 150.75
+            },
+            {
+                "order_id": "1002",
+                "customer_name": "Jane Smith",
+                "order_date": "2024-03-12",
+                "total_amount": 89.99
+            },
+            {
+                "order_id": "1003",
+                "customer_name": "Alice Johnson",
+                "order_date": "2024-03-11",
+                "total_amount": 200.00
+            }
+        ]
+    };
+
+    // Extracting total amounts from orders data
+    let totalAmounts = ordersData.orders.map(order => order.total_amount);
+    let orderIds = ordersData.orders.map(order => order.order_id);
+
+    // Get the canvas element
+    let ctx = document.getElementById('myChart').getContext('2d');
+
+    // Create a new chart instance
+    let myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: orderIds, // Using order IDs as labels
+            datasets: [{
+                label: 'Total Amount',
+                data: totalAmounts, // Using total amounts as data
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
 </body>
 </html>

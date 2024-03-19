@@ -1,6 +1,7 @@
 let express = require("express")
 let app = express()
 let mongoose = require("mongoose")
+const router = express.Router();
 let bodyparser = require("body-parser")
 
 const passport = require("passport");
@@ -67,17 +68,53 @@ app.post("/register", async (req, res) => {
     
     
 });
-
-
+const order = require("./database/order")
 //! Dashboard
-app.get("/dashboard", (req,res)=>{
-    res.render("dashboard.ejs")
+app.get("/dashboard", async(req,res)=>{
+  let data = await order.find()
+
+    res.render("dashboard.ejs",{data:data})
 })
+
 
 //! Order
-app.get("/products", (req,res)=>{
-    res.render("pages/product.ejs")
+
+
+
+
+
+
+
+
+app.get("/order", async (req, res) => {
+    try {
+        let data = await order.find();
+        res.render("order.ejs", { data: data });
+    } catch (error) {
+        console.error("Error fetching orders:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+//! order chart
+
+
+
+
+
+
+//! Product
+app.get("/product", async(req,res)=>{
+    res.render("product.ejs")
 })
+
+
+
+
+
+
+
+
 
 
 app.listen(3000)

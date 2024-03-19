@@ -1,3 +1,127 @@
-body{
-    background-color: red;
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: #efeeeb;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    height: 100px;
+    background-color: white;
+    padding: 0 20px;
+    border-bottom: 2px solid #ccc; 
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+    margin-left: auto; 
+}
+
+.dashboard-title {
+    color: #001ec0;
+    margin-right: auto; 
+}
+
+.date {
+    margin-left: 20px; 
+}
+
+.main-content {
+    display: flex;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.left-panel,
+.right-panel {
+    background-color: white;
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid #ccc; 
+
+}
+
+.left-panel{
+    width: 400px;
+
+}
+.right-panel{
+    width: 900px;
+}
+
+.analytics{
+    border: 1px solid black;
+    height: 50px;
+    width: auto;
+
+
+}
+.analytics p{
+    text-align: center;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+}
+
+table td,
+table th {
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    text-align: center; 
+}
+
+table th {
+    background-color: #f2f2f2; 
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.status1{
+  background-color: #a8e6a3 ;
+  color: green; 
+  border: 2px solid #a8e6a3 ;
+}
+.status2{
+  background-color: #e8af64;
+  color: orangered; 
+  border: 2px solid #e8af64;
+}
+.status3{
+  background-color: #a8e6a3;
+  color: green; 
+  border: 2px solid #a8e6a3;
+}
+.status4{
+  background-color: #e6a3a3;
+  color: red; 
+  border: 2px solid #e6a3a3;
+}
+button {
+  border: none;
+  color: white;
+  padding: 8px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 2px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 50px;
 }
