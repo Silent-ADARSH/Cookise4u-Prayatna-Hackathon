@@ -1,0 +1,11 @@
+Hello There:
+In this project we have used the ml models named : customer forecasting and Inventory forecasting used by seller for a 
+comprehensive inventory management helping him reducing his unnecessary cost manage inventory and predict the peak sale 
+seasons.
+
+As for the tech used:
+Language- Python
+Modules - Numpy , Pandas , Matplotlib , Keras
+Framework - Tensorflow 
+Dataset - Kaggle
+Algorithm - Greedy Algos such as Xgbooster and Linear Regression . 
